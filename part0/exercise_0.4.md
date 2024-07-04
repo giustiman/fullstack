@@ -3,7 +3,7 @@ sequenceDiagram
     participant b as browser
     participant s as server
     b->>s:POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    note over b: data_form<br>note:text
+    note over b,s: data_form<br>sends the form content
     s-->>b:responds with code 302 (redirect)
     note over b,s: Server tells the browser to send another HTTP request <br> (GET) to the one specified on the location header 
     b->>s:GET https://studies.cs.helsinki.fi/exampleapp/notes
